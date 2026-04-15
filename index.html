@@ -539,6 +539,7 @@
 
 
 <script>
+<script>
 // ─── COUNTDOWN ───
 function updateCountdown() {
   const eventDate = new Date('2026-05-31T10:30:00');
@@ -566,7 +567,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ─── WHATSAPP RSVP ───
+// ─── GOOGLE SHEETS RSVP ───
 function submitRSVP(choice) {
   const nameInput = document.getElementById('rsvp-name');
   const name = nameInput.value.trim();
@@ -581,24 +582,34 @@ function submitRSVP(choice) {
     return;
   }
 
-  const phone = '918891091048';
-  const message = choice === 'yes'
-    ? `Hi Suraj, this is ${name}. I'm excited to be part of your special day 🌸`
-    : `Hi Suraj, this is ${name}. I'll miss it, but wishing you both a beautiful celebration 🌸`;
-
-  const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(waUrl, '_blank');
-
   const confirmEl = document.getElementById('rsvp-confirm');
-  if (choice === 'yes') {
-    confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">✦ Thank You, ${name}!</span><br><br>WhatsApp is opening so you can send your RSVP to Suraj. We are absolutely delighted you'll be joining us! See you on <strong>May 31st</strong>! 🌸`;
-  } else {
-    confirmEl.innerHTML = `<span style="color:var(--rose);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">We'll Miss You, ${name}</span><br><br>WhatsApp is opening so you can send your message to Suraj. We truly appreciate you letting us know and will cherish your warm wishes. 💛`;
-  }
+  confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">Saving...</span>`;
   confirmEl.classList.add('show');
-  nameInput.value = '';
-  nameInput.style.borderColor = choice === 'yes' ? 'var(--gold)' : 'var(--rose)';
-  setTimeout(() => nameInput.style.borderColor = '', 2000);
+
+  // !!! PASTE YOUR GOOGLE WEB APP URL HERE !!!
+  const scriptURL = 'YOUR_WEB_APP_URL_HERE'; 
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('rsvp', choice);
+
+  // Send data to Google Sheets
+  fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
+    .then(response => {
+      if (choice === 'yes') {
+        confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">✦ Thank You, ${name}!</span><br><br>Your RSVP has been securely recorded. We are absolutely delighted you'll be joining us! See you on <strong>May 31st</strong>! 🌸`;
+      } else {
+        confirmEl.innerHTML = `<span style="color:var(--rose);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">We'll Miss You, ${name}</span><br><br>Your response has been recorded. We truly appreciate you letting us know and will cherish your warm wishes. 💛`;
+      }
+      
+      // Reset input field
+      nameInput.value = '';
+      nameInput.style.borderColor = choice === 'yes' ? 'var(--gold)' : 'var(--rose)';
+      setTimeout(() => nameInput.style.borderColor = '', 2000);
+    })
+    .catch(error => {
+      confirmEl.innerHTML = `<span style="color:var(--rose);">Oops! Something went wrong. Please try again.</span>`;
+    });
 }
 
 // ─── FLOATING PETALS ───
