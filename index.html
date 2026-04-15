@@ -581,14 +581,14 @@ function submitRSVP(choice) {
     return;
   }
 
- const confirmEl = document.getElementById('rsvp-confirm');
+  const confirmEl = document.getElementById('rsvp-confirm');
   confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">Saving...</span>`;
   confirmEl.classList.add('show');
 
-  // Your Google Web App URL is correctly placed here!
+  // Your specific Google Web App URL is here
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxXt5ap_b0puvIjVrWpe1gHMQfLL2J_-9_Ii3EFxWxfcUNATwZ7mFUf_dz82wYXXgzg/exec'; 
 
-  // CHANGED THIS PART: Using URLSearchParams instead of FormData
+  // Fixed data format for Google Sheets
   const data = new URLSearchParams();
   data.append('name', name);
   data.append('rsvp', choice);
@@ -611,7 +611,6 @@ function submitRSVP(choice) {
       confirmEl.innerHTML = `<span style="color:var(--rose);">Oops! Something went wrong. Please try again.</span>`;
     });
 }
-
 // ─── FLOATING PETALS ───
 function createPetals() {
   const container = document.getElementById('petals');
