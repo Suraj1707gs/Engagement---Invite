@@ -353,231 +353,12 @@
   }
   .rsvp-confirm.show { display: block; animation: fadeUp 0.5s forwards; }
 
-  /* ── DASHBOARD PAGE ── */
-  #dashboard-page {
-    min-height: 100vh;
-    padding: 40px 20px 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #login-box {
-    max-width: 400px;
-    width: 100%;
-    margin-top: 80px;
-    text-align: center;
-    padding: 50px 40px;
-    border: 1.5px solid var(--gold);
-    background: rgba(253,246,227,0.95);
-  }
-  .login-title {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    letter-spacing: 4px;
-    color: var(--gold-dark);
-    margin-bottom: 8px;
-  }
-  .login-sub {
-    font-size: 12px;
-    color: var(--text);
-    opacity: 0.7;
-    margin-bottom: 28px;
-    letter-spacing: 1px;
-  }
-  .login-input {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--gold-light);
-    background: white;
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    outline: none;
-    margin-bottom: 16px;
-    text-align: center;
-    transition: border-color 0.3s;
-  }
-  .login-input:focus { border-color: var(--gold); }
-  .login-btn {
-    width: 100%;
-    padding: 13px;
-    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-    color: white;
-    border: none;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .login-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
-  .login-error {
-    color: var(--rose);
-    font-size: 12px;
-    margin-top: 10px;
-    display: none;
-  }
-
-  #dashboard-content {
-    display: none;
-    width: 100%;
-    max-width: 860px;
-  }
-
-  .db-header {
-    text-align: center;
-    margin-bottom: 36px;
-  }
-  .db-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    font-weight: 300;
-    color: var(--deep);
-    margin-bottom: 6px;
-  }
-  .db-subtitle {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--gold-dark);
-    text-transform: uppercase;
-  }
-
-  .stats-row {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .stat-card {
-    flex: 1;
-    min-width: 150px;
-    max-width: 200px;
-    border: 1px solid var(--gold-light);
-    background: rgba(253,246,227,0.95);
-    padding: 24px 16px;
-    text-align: center;
-  }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    font-weight: 300;
-    line-height: 1;
-  }
-  .stat-num.green { color: #4a8c5c; }
-  .stat-num.red { color: var(--rose); }
-  .stat-num.gold { color: var(--gold); }
-  .stat-lbl {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--text);
-    opacity: 0.7;
-    margin-top: 6px;
-    text-transform: uppercase;
-  }
-
-  .db-table-wrap {
-    border: 1px solid var(--gold-light);
-    background: rgba(253,246,227,0.95);
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-  .db-tabs {
-    display: flex;
-    border-bottom: 1px solid var(--gold-light);
-  }
-  .db-tab {
-    flex: 1;
-    padding: 14px;
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-align: center;
-    background: transparent;
-    border: none;
-    color: var(--text);
-    opacity: 0.6;
-    transition: all 0.3s;
-  }
-  .db-tab.active { opacity: 1; color: var(--gold-dark); border-bottom: 2px solid var(--gold); background: rgba(201,168,76,0.05); }
-  
-  .db-list {
-    padding: 0;
-    max-height: 360px;
-    overflow-y: auto;
-  }
-  .db-list-panel { display: none; }
-  .db-list-panel.active { display: block; }
-
-  .db-row {
-    display: flex;
-    align-items: center;
-    padding: 14px 24px;
-    border-bottom: 1px solid rgba(201,168,76,0.12);
-    gap: 14px;
-    transition: background 0.2s;
-  }
-  .db-row:hover { background: rgba(201,168,76,0.05); }
-  .db-row:last-child { border-bottom: none; }
-  .db-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: var(--gold-light);
-    width: 28px;
-    flex-shrink: 0;
-  }
-  .db-name {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--deep);
-    flex: 1;
-  }
-  .db-time {
-    font-size: 11px;
-    color: var(--text);
-    opacity: 0.5;
-    letter-spacing: 0.5px;
-  }
-  .db-badge {
-    font-size: 10px;
-    letter-spacing: 1px;
-    padding: 3px 10px;
-    text-transform: uppercase;
-  }
-  .badge-yes { background: rgba(74,140,92,0.12); color: #3a7a4a; border: 1px solid rgba(74,140,92,0.3); }
-  .badge-no { background: rgba(192,112,122,0.12); color: var(--rose); border: 1px solid rgba(192,112,122,0.3); }
-
-  .db-empty {
-    text-align: center;
-    padding: 50px 20px;
-    color: var(--text);
-    opacity: 0.4;
-    font-size: 13px;
-    letter-spacing: 1px;
-  }
-
-  .db-clear-btn {
-    padding: 10px 24px;
-    background: transparent;
-    border: 1px solid var(--rose);
-    color: var(--rose);
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-  }
-  .db-clear-btn:hover { background: var(--rose-light); }
-
   /* ── NAV ── */
   .top-nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 14px 28px;
     background: rgba(253,246,227,0.92);
@@ -659,10 +440,6 @@
 <!-- Top Nav -->
 <nav class="top-nav">
   <div class="nav-logo">S & G</div>
-  <div style="display:flex;gap:10px;">
-    <button class="nav-btn" onclick="showPage('invitation')">Invitation</button>
-    <button class="nav-btn" onclick="showPage('dashboard')">Dashboard</button>
-  </div>
 </nav>
 
 <!-- ══════════════ INVITATION PAGE ══════════════ -->
@@ -752,9 +529,9 @@
             <div class="rsvp-title">Kindly RSVP</div>
             <p style="font-size:12px;letter-spacing:0.5px;color:var(--text);opacity:0.7;margin-bottom:16px;">Please let us know if you can join us on this special day</p>
             <input type="text" class="rsvp-name-input" id="rsvp-name" placeholder="Your Full Name" maxlength="60" />
-            <div class="rsvp-buttons">
+            <div class="rsvp-buttons" id="container">
               <button class="rsvp-btn rsvp-yes" onclick="submitRSVP('yes')">✦ &nbsp;Yes, We'll Be There</button>
-              <button class="rsvp-btn rsvp-no" onclick="submitRSVP('no')">Unfortunately, Can't Make It</button>
+              <button id="no-btn" class="rsvp-btn rsvp-no" onclick="submitRSVP('no')">Unfortunately, Can't Make It</button>
             </div>
             <div class="rsvp-confirm" id="rsvp-confirm"></div>
           </div>
@@ -767,70 +544,9 @@
   </div>
 </div>
 
-<!-- ══════════════ DASHBOARD PAGE ══════════════ -->
-<div id="dashboard-page" class="page">
-  <div class="page-content-wrap">
 
-    <!-- LOGIN -->
-    <div id="login-box">
-      <div class="login-title">Host Dashboard</div>
-      <div class="login-sub">Private access — Suraj Kumar only</div>
-      <input type="password" class="login-input" id="dash-password" placeholder="Enter access password" onkeydown="if(event.key==='Enter')loginDash()" />
-      <button class="login-btn" onclick="loginDash()">Access Dashboard</button>
-      <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
-    </div>
-
-    <!-- DASHBOARD CONTENT -->
-    <div id="dashboard-content">
-      <div class="db-header">
-        <div class="db-title">RSVP Dashboard</div>
-        <div class="db-subtitle">Suraj &amp; Gopika · Engagement · 31 May 2026</div>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-num gold" id="stat-total">0</div>
-          <div class="stat-lbl">Total Responses</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num green" id="stat-yes">0</div>
-          <div class="stat-lbl">Attending</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num red" id="stat-no">0</div>
-          <div class="stat-lbl">Can't Make It</div>
-        </div>
-      </div>
-
-      <div class="db-table-wrap">
-        <div class="db-tabs">
-          <button class="db-tab active" onclick="switchTab('all')">All Responses</button>
-          <button class="db-tab" onclick="switchTab('yes')">✦ Attending</button>
-          <button class="db-tab" onclick="switchTab('no')">Not Attending</button>
-        </div>
-        <div class="db-list">
-          <div class="db-list-panel active" id="panel-all"></div>
-          <div class="db-list-panel" id="panel-yes"></div>
-          <div class="db-list-panel" id="panel-no"></div>
-        </div>
-      </div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <p style="font-size:11px;color:var(--text);opacity:0.5;letter-spacing:1px;">Data stored in this browser</p>
-        <button class="db-clear-btn" onclick="clearRSVP()">Clear All Responses</button>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 <script>
-// ─── STORAGE KEY ───
-const STORAGE_KEY = 'sg_engagement_rsvp';
-
-// ─── DASHBOARD PASSWORD ───
-const DASH_PASSWORD = 'surajkumar2026';
-
 // ─── COUNTDOWN ───
 function updateCountdown() {
   const eventDate = new Date('2026-05-31T10:30:00');
@@ -858,18 +574,11 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ─── RSVP ───
-function getRSVP() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
-  catch { return []; }
-}
-function saveRSVP(data) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
+// ─── WHATSAPP RSVP ───
 function submitRSVP(choice) {
   const nameInput = document.getElementById('rsvp-name');
   const name = nameInput.value.trim();
+
   if (!name) {
     nameInput.style.borderColor = 'var(--rose)';
     nameInput.placeholder = 'Please enter your name first ✦';
@@ -880,110 +589,24 @@ function submitRSVP(choice) {
     return;
   }
 
-  const existing = getRSVP();
-  const alreadyExists = existing.find(r => r.name.toLowerCase() === name.toLowerCase());
+  const phone = '918891091048';
+  const message = choice === 'yes'
+    ? `Hi Suraj, this is ${name}. I'm excited to be part of your special day 🌸`
+    : `Hi Suraj, this is ${name}. I'll miss it, but wishing you both a beautiful celebration 🌸`;
 
-  const record = {
-    name,
-    choice,
-    time: new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })
-  };
-
-  if (alreadyExists) {
-    const idx = existing.indexOf(alreadyExists);
-    existing[idx] = record;
-  } else {
-    existing.push(record);
-  }
-  saveRSVP(existing);
+  const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(waUrl, '_blank');
 
   const confirmEl = document.getElementById('rsvp-confirm');
   if (choice === 'yes') {
-    confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">✦ Thank You, ${name}!</span><br><br>We are absolutely delighted that you'll be joining us to celebrate this beautiful moment. Your presence will make our day even more special. See you on <strong>May 31st</strong>! 🌸`;
+    confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">✦ Thank You, ${name}!</span><br><br>WhatsApp is opening so you can send your RSVP to Suraj. We are absolutely delighted you'll be joining us! See you on <strong>May 31st</strong>! 🌸`;
   } else {
-    confirmEl.innerHTML = `<span style="color:var(--rose);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">We'll Miss You, ${name}</span><br><br>We completely understand and truly appreciate you letting us know. We will cherish your warm wishes and look forward to celebrating with you another time. 💛`;
+    confirmEl.innerHTML = `<span style="color:var(--rose);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">We'll Miss You, ${name}</span><br><br>WhatsApp is opening so you can send your message to Suraj. We truly appreciate you letting us know and will cherish your warm wishes. 💛`;
   }
   confirmEl.classList.add('show');
   nameInput.value = '';
   nameInput.style.borderColor = choice === 'yes' ? 'var(--gold)' : 'var(--rose)';
   setTimeout(() => nameInput.style.borderColor = '', 2000);
-}
-
-// ─── PAGES ───
-function showPage(page) {
-  document.getElementById('invitation-page').classList.toggle('active', page === 'invitation');
-  document.getElementById('dashboard-page').classList.toggle('active', page === 'dashboard');
-  if (page === 'dashboard') {
-    document.getElementById('login-box').style.display = '';
-    document.getElementById('dashboard-content').style.display = 'none';
-    document.getElementById('dash-password').value = '';
-    document.getElementById('login-error').style.display = 'none';
-  }
-}
-
-// ─── DASHBOARD LOGIN ───
-function loginDash() {
-  const pw = document.getElementById('dash-password').value;
-  if (pw === DASH_PASSWORD) {
-    document.getElementById('login-box').style.display = 'none';
-    document.getElementById('dashboard-content').style.display = 'block';
-    renderDashboard();
-  } else {
-    document.getElementById('login-error').style.display = 'block';
-    document.getElementById('dash-password').value = '';
-  }
-}
-
-function renderDashboard() {
-  const data = getRSVP();
-  const yesData = data.filter(r => r.choice === 'yes');
-  const noData = data.filter(r => r.choice === 'no');
-
-  document.getElementById('stat-total').textContent = data.length;
-  document.getElementById('stat-yes').textContent = yesData.length;
-  document.getElementById('stat-no').textContent = noData.length;
-
-  renderList('panel-all', data);
-  renderList('panel-yes', yesData);
-  renderList('panel-no', noData);
-}
-
-function renderList(panelId, data) {
-  const panel = document.getElementById(panelId);
-  if (!data.length) {
-    panel.innerHTML = '<div class="db-empty">No responses yet</div>';
-    return;
-  }
-  panel.innerHTML = data.map((r, i) => `
-    <div class="db-row">
-      <div class="db-num">${i + 1}</div>
-      <div class="db-name">${escapeHtml(r.name)}</div>
-      <div class="db-time">${r.time}</div>
-      <div class="db-badge ${r.choice === 'yes' ? 'badge-yes' : 'badge-no'}">${r.choice === 'yes' ? '✦ Attending' : 'Declined'}</div>
-    </div>
-  `).join('');
-}
-
-function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function switchTab(tab) {
-  document.querySelectorAll('.db-tab').forEach((t, i) => {
-    const tabs = ['all','yes','no'];
-    t.classList.toggle('active', tabs[i] === tab);
-  });
-  document.querySelectorAll('.db-list-panel').forEach((p, i) => {
-    const tabs = ['all','yes','no'];
-    p.classList.toggle('active', tabs[i] === tab);
-  });
-}
-
-function clearRSVP() {
-  if (confirm('Are you sure you want to clear ALL RSVP responses? This cannot be undone.')) {
-    localStorage.removeItem(STORAGE_KEY);
-    renderDashboard();
-  }
 }
 
 // ─── FLOATING PETALS ───
@@ -1006,6 +629,34 @@ function createPetals() {
   }
 }
 createPetals();
+
+// ─── RUNAWAY NO BUTTON ───
+const noBtn = document.getElementById('no-btn');
+let escapeCount = 0;
+const maxEscapes = 5;
+
+function moveButton() {
+  if (escapeCount >= maxEscapes) return;
+  escapeCount++;
+  const container = document.getElementById('container');
+  const rect = container.getBoundingClientRect();
+  const maxX = rect.width - noBtn.offsetWidth;
+  const maxY = 120;
+  const x = Math.random() * maxX - noBtn.offsetLeft;
+  const y = Math.random() * maxY - noBtn.offsetTop;
+  const rotate = (Math.random() * 10) - 5;
+  const scale = 0.95 + Math.random() * 0.1;
+  noBtn.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
+  noBtn.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg) scale(${scale})`;
+  if (escapeCount < maxEscapes) {
+    noBtn.innerText = 'Are you sure? 😄';
+  } else {
+    noBtn.innerText = 'Okay okay 😅';
+  }
+}
+
+noBtn.addEventListener('mouseenter', moveButton);
+noBtn.addEventListener('touchstart', moveButton, { passive: true });
 </script>
 </body>
 </html>
