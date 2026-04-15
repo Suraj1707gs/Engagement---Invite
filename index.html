@@ -581,19 +581,20 @@ function submitRSVP(choice) {
     return;
   }
 
-  const confirmEl = document.getElementById('rsvp-confirm');
+ const confirmEl = document.getElementById('rsvp-confirm');
   confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">Saving...</span>`;
   confirmEl.classList.add('show');
 
-  // !!! PASTE YOUR GOOGLE WEB APP URL HERE !!!
-  const scriptURL = 'AKfycby0pb4vtGpYCeYuYQ8iu2GejeC6L-y7eNKZt6lbmhOm3f93QiHeUz0-5sDQ5uupLZi2'; 
+  // Your Google Web App URL is correctly placed here!
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxXt5ap_b0puvIjVrWpe1gHMQfLL2J_-9_Ii3EFxWxfcUNATwZ7mFUf_dz82wYXXgzg/exec'; 
 
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('rsvp', choice);
+  // CHANGED THIS PART: Using URLSearchParams instead of FormData
+  const data = new URLSearchParams();
+  data.append('name', name);
+  data.append('rsvp', choice);
 
   // Send data to Google Sheets
-  fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
+  fetch(scriptURL, { method: 'POST', body: data, mode: 'no-cors' })
     .then(response => {
       if (choice === 'yes') {
         confirmEl.innerHTML = `<span style="color:var(--gold-dark);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;">✦ Thank You, ${name}!</span><br><br>Your RSVP has been securely recorded. We are absolutely delighted you'll be joining us! See you on <strong>May 31st</strong>! 🌸`;
